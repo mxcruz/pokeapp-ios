@@ -13,6 +13,7 @@ struct PokemonDetailView: View {
             if viewModel.isLoading {
                 ProgressView()
             } else if let detail = viewModel.pokemonDetail {
+                
                 if let imageUrl = detail.imageURL, let url = URL(string: imageUrl) {
                     AsyncImage(url: url) { image in
                         image
@@ -22,9 +23,13 @@ struct PokemonDetailView: View {
                     } placeholder: {
                         ProgressView()
                     }
+                    
                 }
+                
                 Text(detail.name.capitalized)
                     .font(.largeTitle)
+                    .padding()
+                
                 Text("Height: \(detail.height)")
                 Text("Weight: \(detail.weight)")
             } else if let errorMessage = viewModel.errorMessage {
