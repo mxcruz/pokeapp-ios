@@ -1,10 +1,8 @@
 import SwiftUI
 
 struct PokemonListView: View {
-    @StateObject private var viewModel = PokemonListViewModel(
-        getPokemonsUseCase: GetPokemonsUseCase(repository: PokemonRepositoryImpl())
-    )
-    
+    @StateObject var viewModel: PokemonListViewModel
+
     var body: some View {
         NavigationView {
             List(viewModel.pokemons) { pokemon in
@@ -16,14 +14,15 @@ struct PokemonListView: View {
                     }
                     .frame(width: 50, height: 50)
                     
-                    Text(pokemon.name.capitalized)
-                        .font(.headline)
+                    NavigationLink(destination: PokemonDetailView(url: pokemon.detailURL)) {
+                        Text(pokemon.name.capitalized)
+                    }
                 }
             }
-            .onAppear {
-                viewModel.loadPokemons()
+            .navigationTitle("Pokémons")
+            .task {
+                await viewModel.loadPokemons()
             }
-            .navigationTitle("Pokémon List")
         }
     }
 }

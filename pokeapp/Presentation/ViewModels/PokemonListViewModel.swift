@@ -1,23 +1,24 @@
-import SwiftUI
+import Foundation
 
+@MainActor
 class PokemonListViewModel: ObservableObject {
     @Published var pokemons: [Pokemon] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+
     private let getPokemonsUseCase: GetPokemonsUseCase
-    
+
     init(getPokemonsUseCase: GetPokemonsUseCase) {
         self.getPokemonsUseCase = getPokemonsUseCase
     }
-    
-    func loadPokemons() {
-        getPokemonsUseCase.execute { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let pokemons):
-                    self?.pokemons = pokemons
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
-            }
+
+    func loadPokemons() async {
+        isLoading = true
+        do {
+            pokemons = try await getPokemonsUseCase.execute()
+        } catch {
+            errorMessage = "Error loading pokemons"
         }
+        isLoading = false
     }
 }

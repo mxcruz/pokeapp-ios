@@ -1,5 +1,3 @@
-import Foundation
-
-struct PokemonListDTO: Codable {
-    let results: [PokemonDTO]
+struct PokemonListResponseDTO: Codable {
+    let results: [PokemonListItemDTO]
 }

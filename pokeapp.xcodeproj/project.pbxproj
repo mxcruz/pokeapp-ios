@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E1AD2E182D75C6BF00EDBFF7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E1AD2E172D75C6BF00EDBFF7 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E1AD2D992D752CF300EDBFF7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		E1AD2D882D752CF200EDBFF7 /* pokeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD2D982D752CF300EDBFF7 /* pokeappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD2DA22D752CF300EDBFF7 /* pokeappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokeappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1AD2E172D75C6BF00EDBFF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +48,11 @@
 		E1AD2DA52D752CF300EDBFF7 /* pokeappUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = pokeappUITests;
+			sourceTree = "<group>";
+		};
+		E1AD2E192D75C6CE00EDBFF7 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +85,8 @@
 		E1AD2D7F2D752CF100EDBFF7 = {
 			isa = PBXGroup;
 			children = (
+				E1AD2E192D75C6CE00EDBFF7 /* .github */,
+				E1AD2E172D75C6BF00EDBFF7 /* README.md */,
 				E1AD2D8A2D752CF200EDBFF7 /* pokeapp */,
 				E1AD2D9B2D752CF300EDBFF7 /* pokeappTests */,
 				E1AD2DA52D752CF300EDBFF7 /* pokeappUITests */,
@@ -109,6 +121,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E1AD2D8A2D752CF200EDBFF7 /* pokeapp */,
+				E1AD2E192D75C6CE00EDBFF7 /* .github */,
 			);
 			name = pokeapp;
 			packageProductDependencies = (
@@ -212,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AD2E182D75C6BF00EDBFF7 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

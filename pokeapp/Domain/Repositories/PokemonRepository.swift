@@ -1,5 +1,4 @@
-import Foundation
-
 protocol PokemonRepository {
-    func getPokemons(completion: @escaping (Result<[Pokemon], Error>) -> Void)
+    func fetchPokemons() async throws -> [Pokemon]
+    func fetchPokemonDetail(from url: String) async throws -> PokemonDetail
 }

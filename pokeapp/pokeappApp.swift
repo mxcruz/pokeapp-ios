@@ -4,7 +4,11 @@ import SwiftUI
 struct pokeappApp: App {
     var body: some Scene {
         WindowGroup {
-            PokemonListView()
+            let repository = PokemonApiClient()
+            let getPokemonsUseCase = GetPokemonsUseCase(repository: repository)
+            let viewModel = PokemonListViewModel(getPokemonsUseCase: getPokemonsUseCase)
+            
+            PokemonListView(viewModel: viewModel)
         }
     }
 }
