@@ -3,7 +3,7 @@ import Foundation
 final class PokemonApiClient: PokemonRepository {
     
     func fetchPokemons() async throws -> [Pokemon] {
-        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=20")!
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=151")!
         let (data, _) = try await URLSession.shared.data(from: url)
         let dto = try JSONDecoder().decode(PokemonListResponseDTO.self, from: data)
         
